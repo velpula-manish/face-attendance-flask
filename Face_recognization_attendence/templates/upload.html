@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+  <title>Mark Attendance</title>
+  <style>
+    body { font-family:sans-serif; margin:30px; }
+    .container { max-width:400px; margin:40px auto; padding:24px 20px; background:#fff; border-radius:12px; box-shadow:0 8px 24px rgba(80,80,150,0.12); }
+    .result { margin-top:18px; padding:10px; text-align:center; font-weight:bold; color:green; }
+    label { font-weight:bold; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 style="text-align:center;">Mark Attendance</h2>
+    <form method="post" enctype="multipart/form-data" action="/upload" style="display:flex; flex-direction:column; gap:18px;">
+  <label for="file">Face Image:</label>
+  <input type="file" name="file" accept="image/*" required style="font-size:18px; width:100%;">
+  <input type="submit" value="Mark Attendance" style="padding:9px; font-size:1.08em; cursor:pointer; background:#224aac; color:#fff; border:none; border-radius:7px; margin-top:10px;">
+</form>
+
+    {% if result %}
+      <div class="result">{{result}}</div>
+    {% endif %}
+  </div>
+</body>
+</html>
